@@ -4,7 +4,7 @@ package com.portfolioweb.FA.Controller;
 import com.portfolioweb.FA.Dto.dtoSkill;
 import com.portfolioweb.FA.Entity.Skill;
 import com.portfolioweb.FA.Security.Controller.Mensaje;
-import com.portfolioweb.FA.Service.SSkill;
+import com.portfolioweb.FA.Security.Service.SSkill;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

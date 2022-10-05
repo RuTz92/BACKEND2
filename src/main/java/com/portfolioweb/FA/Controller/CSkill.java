@@ -1,3 +1,4 @@
+
 package com.portfolioweb.FA.Controller;
 
 import com.portfolioweb.FA.Dto.dtoSkill;
@@ -21,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/skill")
-@CrossOrigin(origins = "https://francoangiolinipw.firebaseapp.com")
+@CrossOrigin(origins = "https://francoangiolinipw.web.app")
 public class CSkill {
 
     @Autowired

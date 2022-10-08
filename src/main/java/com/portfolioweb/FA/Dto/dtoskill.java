@@ -6,7 +6,7 @@ import javax.validation.constraints.NotBlank;
 
 public class dtoskill {
     @NotBlank
-    private String nombre;
+    private String nombre;    
     @NotBlank
     private int porcentaje;
 

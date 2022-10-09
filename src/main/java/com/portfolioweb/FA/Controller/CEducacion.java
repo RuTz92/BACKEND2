@@ -64,7 +64,7 @@ public class CEducacion {
         }
         
         Educacion educacion = new Educacion(
-                dtoeducacion.getNombreE(), dtoeducacion.getDescripcionE()
+                dtoeducacion.getNombreE(), dtoeducacion.getDescripcionE(), dtoeducacion.getLogo(), dtoeducacion.getPeriodo()
         );
         
         sEducacion.save(educacion);
@@ -83,12 +83,16 @@ public class CEducacion {
         if(StringUtils.isBlank(dtoeducacion.getNombreE())){
             return new ResponseEntity(new Mensaje("El campo no puede estar vacio"), HttpStatus.BAD_REQUEST);
         }
+        if(StringUtils.isBlank(dtoeducacion.getPeriodo())){
+            return new ResponseEntity(new Mensaje("El periodo no puede estar vacio"), HttpStatus.BAD_REQUEST);
+        }
         
         Educacion educacion = sEducacion.getOne(id).get();
         
         educacion.setNombreE(dtoeducacion.getNombreE());
         educacion.setDescripcionE(dtoeducacion.getDescripcionE());
-        
+        educacion.setLogo(dtoeducacion.getLogo());
+        educacion.setPeriodo(dtoeducacion.getPeriodo());
         sEducacion.save(educacion);
         
         return new ResponseEntity(new Mensaje("Educacion actualizada"), HttpStatus.OK);

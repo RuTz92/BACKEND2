@@ -1,53 +1,32 @@
-package com.portfolioweb.FA.Entity;
+package com.portfolioweb.FA.Dto;
 
-import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotBlank;
 
-@Entity
-public class Persona implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    @NotNull
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+public class dtoPersona {
+    
+    @NotBlank
     private String nombre;
-
-    @NotNull
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+    @NotBlank
     private String apellido;
-
+    @NotBlank
     private String img;
+    @NotBlank
     private String titulo1;
     private String titulo2;
+    @NotBlank
     private String descripcion;
 
-    public Persona() {
+    public dtoPersona() {
     }
 
-    public Persona(String nombre, String apellido, String img, String titulo1, String titulo2, String descripcion) {
+    public dtoPersona(String nombre, String apellido, String img, String titulo1, String titulo2, String descripcion) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.img = img;
         this.titulo1 = titulo1;
         this.titulo2 = titulo2;
         this.descripcion = descripcion;
-    }
-
-    
-    
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -97,6 +76,6 @@ public class Persona implements Serializable {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
+    
     
 }

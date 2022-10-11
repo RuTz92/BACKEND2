@@ -22,8 +22,8 @@ public class SProyecto {
         return rProyecto.findById(id);
     }
     
-    public Optional<Proyecto> getByNombre(String nombre){
-        return rProyecto.findByNombre(nombre);
+    public Optional<Proyecto> getByProyecto(String proyecto){
+        return rProyecto.findByProyecto(proyecto);
     }
     
     public void save(Proyecto skill){
@@ -38,7 +38,7 @@ public class SProyecto {
         return rProyecto.existsById(id);
     }
     
-    public boolean existsByNombre(String nombre){
-        return rProyecto.existsByNombre(nombre);
+    public boolean existsByProyecto(String proyecto){
+        return rProyecto.existsByProyecto(proyecto);
     }
 }

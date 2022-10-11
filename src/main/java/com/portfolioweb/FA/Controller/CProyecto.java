@@ -36,9 +36,9 @@ public class CProyecto {
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody dtoProyecto dtoproyecto) {
         if (StringUtils.isBlank(dtoproyecto.getProyecto())) {
-            return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("El Proyecto es obligatorio"), HttpStatus.BAD_REQUEST);
         }
-        if (sProyecto.existsByNombre(dtoproyecto.getProyecto())) {
+        if (sProyecto.existsByProyecto(dtoproyecto.getProyecto())) {
             return new ResponseEntity(new Mensaje("Esa Proyecto existe"), HttpStatus.BAD_REQUEST);
         }
         Proyecto proyecto = new Proyecto(dtoproyecto.getProyecto(), dtoproyecto.getDescripcion(), dtoproyecto.getFecha(), dtoproyecto.getImg());
@@ -55,12 +55,12 @@ public class CProyecto {
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
         }
         //comparo nombre Proyecto
-        if (sProyecto.existsByNombre(dtoproyecto.getProyecto()) && sProyecto.getByNombre(dtoproyecto.getProyecto()).get().getId() != id) {
+        if (sProyecto.existsByProyecto(dtoproyecto.getProyecto()) && sProyecto.getByProyecto(dtoproyecto.getProyecto()).get().getId() != id) {
             return new ResponseEntity(new Mensaje("Esa Proyecto ya existe"), HttpStatus.BAD_REQUEST);
         }
         //no puede estar vacio
         if (StringUtils.isBlank(dtoproyecto.getProyecto())) {
-            return new ResponseEntity(new Mensaje("El nombre es obligarotio"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("El Proyecto es obligarotio"), HttpStatus.BAD_REQUEST);
         }
 
         Proyecto proyecto = sProyecto.getOne(id).get();
